@@ -7,7 +7,7 @@ const About = () => (
   <Layout>
     <SEO title="Page two" />
     <h1>This is about pages</h1>
-    <p>Welcome to page 2</p>
+    <p>Lorem ipsum dolor sir amet</p>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )

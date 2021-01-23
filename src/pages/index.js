@@ -5,6 +5,7 @@ import Banner from "../components/landing/Banner"
 import SpbuKami from "../components/landing/SpbuKami"
 import Testimonials from "../components/landing/Testimonials"
 import Statistic from "../components/landing/Statistic"
+import "../components/layout.css"
 
 const IndexPage = () => (
   <>

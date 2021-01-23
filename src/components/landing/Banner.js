@@ -11,7 +11,7 @@ function Banner(props) {
     <div
       sx={{
         width: "100%",
-        height: window.innerHeight,
+        height: "100vh",
       }}
     >
       <div

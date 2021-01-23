@@ -427,10 +427,10 @@ function SpbuKami() {
     setSpbu("thr")
   }, [])
   const handlePressLoginSpbuDoro = React.useCallback(() => {
-    window.alert("login_aplikasi_doro")
+    // window.alert("login_aplikasi_doro")
   }, [])
   const handlePressLoginSpbuThr = React.useCallback(() => {
-    window.alert("login_aplikasi_thr")
+    // window.alert("login_aplikasi_thr")
   }, [])
   return (
     <div

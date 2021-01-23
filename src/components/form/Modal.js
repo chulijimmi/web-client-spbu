@@ -2,7 +2,6 @@
 import { jsx } from "theme-ui"
 import { AiOutlineClose } from "react-icons/ai"
 import colors from "../../theme/colors"
-import { phone } from "../../theme/media-query"
 import { HideUntilLoaded } from "react-animation"
 
 function Modal({ handleClosed, message }) {

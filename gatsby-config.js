@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `PT. YOUR COMPANY SPBU SIAP MELAYANI ANDA`,
+    description: `Kami Adalah Mitra SPBU Dengan Pelayanan Terbaik Di Wilayah Kami, hubungi kami untuk pengaduan ataupun mengembangkan usaha anda di tempat kami`,
     author: `@gatsbyjs`,
   },
   plugins: [

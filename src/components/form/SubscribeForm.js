@@ -44,6 +44,9 @@ function SubscribeForm() {
             position: "relative",
             width: "400px",
             height: "100px",
+            [phone]: {
+              width: "100%",
+            },
           }}
         >
           <Modal

@@ -1,23 +1,36 @@
 /** @jsx jsx */
 import React from "react"
 import { jsx } from "theme-ui"
+import { navigate } from "gatsby"
 import colors from "../../theme/colors"
 import ButtonPrimary, { ButtonSecondary } from "../form/Button"
-import SpbuDoro from "../../images/bg03.jpeg"
+import SpbuCodo from "../../images/bg03.jpeg"
 import SpbuThr from "../../images/bg02.jpg"
-import MinimarketDoro from "../../images/minimarket_doro.jpg"
+import MinimarketCodo from "../../images/minimarket_doro.jpg"
 import MinimarketThr from "../../images/minimarket_thr.jpg"
-import ToiletDoro from "../../images/toilet_doro.jpg"
+import ToiletCodo from "../../images/toilet_doro.jpg"
 import ToiletThr from "../../images/toilet_thr.jpg"
 import { LazyLoadImage } from "react-lazy-load-image-component"
+import { phone } from "../../theme/media-query"
 
-function ContentSpbuDoro({ onPressLogin }) {
+function ContentSpbuCodo({ onPressLogin }) {
   return (
     <div
-      sx={{ width: "100%", display: "flex", justifyContent: "space-between" }}
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        [phone]: { display: "contents" },
+      }}
     >
-      <div sx={{ width: "50%" }}>
-        <div sx={{ height: "400px", position: "relative" }}>
+      <div sx={{ width: "50%", [phone]: { width: "100%" } }}>
+        <div
+          sx={{
+            height: "400px",
+            position: "relative",
+            [phone]: { height: "300px" },
+          }}
+        >
           {/* <!--- Start Image 1 ---> */}
           <div
             sx={{
@@ -31,13 +44,17 @@ function ContentSpbuDoro({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 3,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
               <LazyLoadImage
                 alt={"Spbu"}
                 effect="blur"
-                src={MinimarketDoro}
+                src={MinimarketCodo}
                 width={"100%"}
                 height={"100%"}
                 sx={{
@@ -65,13 +82,17 @@ function ContentSpbuDoro({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 2,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
               <LazyLoadImage
                 alt={"Spbu"}
                 effect="blur"
-                src={SpbuDoro}
+                src={SpbuCodo}
                 width={"100%"}
                 height={"100%"}
                 sx={{
@@ -98,13 +119,17 @@ function ContentSpbuDoro({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 1,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
               <LazyLoadImage
                 alt={"Spbu"}
                 effect="blur"
-                src={ToiletDoro}
+                src={ToiletCodo}
                 width={"100%"}
                 height={"100%"}
                 sx={{
@@ -121,9 +146,9 @@ function ContentSpbuDoro({ onPressLogin }) {
           {/* <!---End Image 3 ---> */}
         </div>
       </div>
-      <div sx={{ width: "50%" }}>
+      <div sx={{ width: "50%", [phone]: { width: "100%", height: "auto" } }}>
         <div sx={{ paddingLeft: "20px" }}>
-          <h2 sx={{ fontWeight: 400, color: colors.dark }}>Spbu Doro</h2>
+          <h2 sx={{ fontWeight: 400, color: colors.dark }}>Spbu Codo</h2>
           <p
             sx={{
               color: colors.darkLight,
@@ -172,6 +197,9 @@ function ContentSpbuDoro({ onPressLogin }) {
               fontStyle: "italic",
               fontSize: "12px",
               lineHeight: "20px",
+              [phone]: {
+                marginRight: "10px",
+              },
             }}
           >
             Spbu ini memiliki sistem aplikasi terintegrasi dengan laporan
@@ -192,10 +220,21 @@ function ContentSpbuDoro({ onPressLogin }) {
 function ContentSpbuThr({ onPressLogin }) {
   return (
     <div
-      sx={{ width: "100%", display: "flex", justifyContent: "space-between" }}
+      sx={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        [phone]: { display: "contents" },
+      }}
     >
-      <div sx={{ width: "50%" }}>
-        <div sx={{ height: "400px", position: "relative" }}>
+      <div sx={{ width: "50%", [phone]: { width: "100%" } }}>
+        <div
+          sx={{
+            height: "400px",
+            position: "relative",
+            [phone]: { height: "300px" },
+          }}
+        >
           {/* <!--- Start Image 1 ---> */}
           <div
             sx={{
@@ -209,6 +248,10 @@ function ContentSpbuThr({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 3,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
@@ -243,6 +286,10 @@ function ContentSpbuThr({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 2,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
@@ -276,6 +323,10 @@ function ContentSpbuThr({ onPressLogin }) {
               boxShadow:
                 "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30)",
               zIndex: 1,
+              [phone]: {
+                width: "calc(100vw - 120px)",
+                height: "200px",
+              },
             }}
           >
             <div sx={{ width: "100%", height: "100%" }}>
@@ -299,7 +350,12 @@ function ContentSpbuThr({ onPressLogin }) {
           {/* <!---End Image 3 ---> */}
         </div>
       </div>
-      <div sx={{ width: "50%" }}>
+      <div
+        sx={{
+          width: "50%",
+          [phone]: { width: "100%", height: "auto" },
+        }}
+      >
         <div sx={{ paddingLeft: "20px" }}>
           <h2 sx={{ fontWeight: 400, color: colors.dark }}>Spbu Thr</h2>
           <p
@@ -350,6 +406,9 @@ function ContentSpbuThr({ onPressLogin }) {
               fontStyle: "italic",
               fontSize: "12px",
               lineHeight: "20px",
+              [phone]: {
+                marginRight: "10px",
+              },
             }}
           >
             Spbu ini memiliki sistem aplikasi terintegrasi dengan laporan
@@ -417,20 +476,20 @@ function ButtonCircle({
 }
 
 function SpbuKami() {
-  const [spbu, setSpbu] = React.useState("doro")
-  const handlePressSpbuDoro = React.useCallback(() => {
+  const [spbu, setSpbu] = React.useState("codo")
+  const handlePressSpbuCodo = React.useCallback(() => {
     // window.alert("spbu doro")
-    setSpbu("doro")
+    setSpbu("codo")
   }, [])
   const handlePressSpbuThr = React.useCallback(() => {
     // window.alert("spbu thr")
     setSpbu("thr")
   }, [])
-  const handlePressLoginSpbuDoro = React.useCallback(() => {
-    // window.alert("login_aplikasi_doro")
+  const handlePressLoginSpbuCodo = React.useCallback(() => {
+    navigate("https://demo.digitalspbu.com")
   }, [])
   const handlePressLoginSpbuThr = React.useCallback(() => {
-    // window.alert("login_aplikasi_thr")
+    navigate("https://demo.digitalspbu.com")
   }, [])
   return (
     <div
@@ -438,6 +497,9 @@ function SpbuKami() {
         width: "1080px",
         paddingY: 40,
         margin: "0 auto",
+        [phone]: {
+          width: "100%",
+        },
       }}
     >
       <h1
@@ -469,12 +531,12 @@ function SpbuKami() {
           }}
         >
           <ButtonCircle
-            label={"Spbu Doro"}
-            onClick={handlePressSpbuDoro}
+            label={"Spbu Codo"}
+            onClick={handlePressSpbuCodo}
             topBullet={-12}
             topText={-40}
             leftText={-23}
-            active={spbu === "doro" ? true : false}
+            active={spbu === "codo" ? true : false}
           />
           <ButtonCircle
             label={"Spbu Thr"}
@@ -490,8 +552,8 @@ function SpbuKami() {
         </div>
       </div>
       {/* <!-- content --> */}
-      {spbu === "doro" ? (
-        <ContentSpbuDoro onPressLogin={handlePressLoginSpbuDoro} />
+      {spbu === "codo" ? (
+        <ContentSpbuCodo onPressLogin={handlePressLoginSpbuCodo} />
       ) : (
         <ContentSpbuThr onPressLogin={handlePressLoginSpbuThr} />
       )}

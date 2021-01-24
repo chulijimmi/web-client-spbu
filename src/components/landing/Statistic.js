@@ -5,6 +5,7 @@ import { jsx } from "theme-ui"
 import colors from "../../theme/colors"
 import Building from "../../images/building.jpg"
 import { ButtonSecondary } from "../form/Button"
+import { phone } from "../../theme/media-query"
 
 function InfoStatistic({ number, title, subTitle }) {
   return (
@@ -13,32 +14,51 @@ function InfoStatistic({ number, title, subTitle }) {
         width: "50%",
         display: "flex",
         justifyContent: "space-between",
+        [phone]: {
+          paddingX: "10px",
+        },
       }}
     >
       <p
         sx={{
-          width: "50%",
+          width: "40%",
           color: colors.white,
           fontWeight: 400,
           fontSize: 32,
+          [phone]: {
+            fontSize: 24,
+          },
         }}
       >
         {number}
       </p>
       <div
         sx={{
-          width: "50%",
+          width: "60%",
           textAlign: "left",
           marginTop: "20px",
           paddingLeft: "20px",
         }}
       >
-        <p sx={{ color: colors.white }}>{title}</p>
+        <p
+          sx={{
+            color: colors.white,
+            [phone]: {
+              marginTop: "5px",
+              fontSize: 14,
+            },
+          }}
+        >
+          {title}
+        </p>
         <p
           sx={{
             color: colors.greyLight,
             fontSize: "12px",
             fontStyle: "italic",
+            [phone]: {
+              paddingLeft: "0px",
+            },
           }}
         >
           {subTitle}
@@ -49,7 +69,15 @@ function InfoStatistic({ number, title, subTitle }) {
 }
 function Statistic() {
   return (
-    <div sx={{ position: "relative", height: "285px" }}>
+    <div
+      sx={{
+        position: "relative",
+        height: "285px",
+        [phone]: {
+          height: "441px",
+        },
+      }}
+    >
       <LazyLoadImage
         alt={"Spbu"}
         effect="blur"
@@ -82,10 +110,24 @@ function Statistic() {
             height: "auto",
             margin: "0 auto",
             paddingY: "40px",
+            [phone]: {
+              width: "100%",
+            },
           }}
         >
-          <div sx={{ display: "flex", justifyContent: "space-between" }}>
-            <div sx={{ width: "60%" }}>
+          <div
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              [phone]: { display: "contents" },
+            }}
+          >
+            <div
+              sx={{
+                width: "60%",
+                [phone]: { width: "calc(100%)" },
+              }}
+            >
               <div
                 sx={{
                   display: "flex",
@@ -121,7 +163,16 @@ function Statistic() {
                 />
               </div>
             </div>
-            <div sx={{ width: "40%", textAlign: "right" }}>
+            <div
+              sx={{
+                width: "40%",
+                textAlign: "right",
+                [phone]: {
+                  width: "100%",
+                  textAlign: "center",
+                },
+              }}
+            >
               <p
                 sx={{ fontWeight: 300, color: colors.white, marginTop: "60px" }}
               >

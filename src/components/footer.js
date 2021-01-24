@@ -72,6 +72,9 @@ function SocialMedia() {
           color: colors.white,
           letterSpacing: "0.02em",
           lineHeight: "16px",
+          [phone]: {
+            marginTop: "10px",
+          },
         }}
       >
         Your Company info put the title arround here lorem ipsum dolor sir amet
@@ -114,7 +117,7 @@ function Footer() {
               width: "20%",
               height: "46px",
               [ipad]: { width: "100%" },
-              [phone]: { width: "100%", marginLeft: 20 },
+              [phone]: { width: "100%", marginLeft: 20, marginBottom: 90 },
             }}
           >
             <SocialMedia />
@@ -142,7 +145,7 @@ function Footer() {
             }}
           >
             <Title label="WEBSITE KAMI" />
-            <HyperLink to={"/about"} label={"Tentang Kami"} />
+            <HyperLink to={"/"} label={"Corporate"} />
             <HyperLink to={"/"} label={"News"} />
             <HyperLink to={"/"} label={"Contact Us"} />
             <HyperLink to={"/"} label={"Privacy Policy"} />

@@ -31,11 +31,20 @@ function Banner(props) {
             background: "rgb(2, 0, 36)",
             background:
               "linear-gradient(0deg,rgba(21, 21, 31, 0.80) 0%, rgba(21, 21, 31, 0.50) 70%,rgba(21, 21, 31, 0.80) 100%)",
-            [phone]: { paddingTop: "20px" },
+            [phone]: { paddingTop: "20px", height: "calc(100vh - 20px)" },
           }}
         >
           <MenuHome />
-          <div sx={{ width: "50%", textAlign: "center", margin: "0 auto" }}>
+          <div
+            sx={{
+              width: "50%",
+              textAlign: "center",
+              margin: "0 auto",
+              [phone]: {
+                width: "90%",
+              },
+            }}
+          >
             <h1
               sx={{
                 color: colors.white,

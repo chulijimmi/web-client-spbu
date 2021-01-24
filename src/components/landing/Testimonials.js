@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 import colors from "../../theme/colors"
 import Man from "../../images/man.jpg"
 import { LazyLoadImage } from "react-lazy-load-image-component"
+import { phone } from "../../theme/media-query"
 function Testimonials() {
   return (
     <div sx={{ background: colors.greyLight }}>
@@ -12,6 +13,10 @@ function Testimonials() {
           width: "40%",
           paddingY: 40,
           margin: "0 auto",
+          [phone]: {
+            width: "calc(100% - 40px)",
+            paddingX: "20px",
+          },
         }}
       >
         <h1

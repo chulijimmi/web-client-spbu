@@ -1,9 +1,12 @@
 /** @jsx jsx */
+import React from "react"
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import Logo from "../../images/logo.png"
-import { GoLocation } from "react-icons/go"
+import { AiOutlineLogin } from "react-icons/ai"
 import colors from "../../theme/colors"
+import { phone, ipad } from "../../theme/media-query"
+import { CgMenu } from "react-icons/cg"
 
 function Navigation({ label, to, subtitle, active }) {
   return (
@@ -32,6 +35,9 @@ function Navigation({ label, to, subtitle, active }) {
           ":hover": {
             borderTop: `2px solid ${active ? colors.grey : colors.primary}`,
           },
+          [phone]: {
+            paddingBottom: "15px",
+          },
         }}
       >
         <p
@@ -50,7 +56,7 @@ function Navigation({ label, to, subtitle, active }) {
             margin: 0,
             fontSize: 12,
             marginTop: "5px",
-            color: active ? colors.primaryDark : colors.grey,
+            color: active ? colors.primaryLight : colors.grey,
           }}
         >
           {subtitle}
@@ -59,13 +65,22 @@ function Navigation({ label, to, subtitle, active }) {
     </Link>
   )
 }
-function MenuHome() {
+function MenuHome(props) {
+  console.log("props MenuHome", props)
+  const { uri } = props
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const handlePressMenu = React.useCallback(() => {
+    setIsMenuOpen(!isMenuOpen)
+  }, [isMenuOpen])
   return (
     <div
       sx={{
         width: "1080px",
         paddingY: 40,
         margin: "0 auto",
+        [phone]: {
+          width: "100%",
+        },
       }}
     >
       {/* <!-- Top Logo Area ---> */}
@@ -86,7 +101,23 @@ function MenuHome() {
             src={Logo}
             alt="Logo"
             height={75}
-            sx={{ alignContent: "flex-start" }}
+            sx={{ alignContent: "flex-start", [phone]: { marginLeft: "10px" } }}
+          />
+        </div>
+        <div
+          sx={{
+            display: "none",
+            [phone]: {
+              display: "flex",
+              width: "70px",
+              alignItems: "center",
+            },
+          }}
+        >
+          <CgMenu
+            size={18}
+            sx={{ color: colors.white }}
+            onClick={handlePressMenu}
           />
         </div>
         <div
@@ -94,22 +125,39 @@ function MenuHome() {
             width: 300,
             display: "flex",
             justifyContent: "space-between",
+            [phone]: {
+              display: "none",
+            },
           }}
         >
           <div sx={{ width: "50%" }}>
-            <Link to="/" sx={{ textDecoration: "none" }}>
+            <Link
+              to="https://demo.digitalspbu.com"
+              sx={{
+                textDecoration: "none",
+                color: colors.white,
+                ":hover": { color: colors.primaryLight },
+              }}
+            >
               <span>
-                <GoLocation size={28} sx={{ color: colors.white }} />
+                <AiOutlineLogin size={18} />
                 <p sx={{ margin: " 5px", fontSize: 14, color: colors.white }}>
-                  SPBU DORO
+                  SPBU CODO
                 </p>
               </span>
             </Link>
           </div>
           <div sx={{ width: "50%" }}>
-            <Link to="/" sx={{ textDecoration: "none" }}>
+            <Link
+              to="https://demo.digitalspbu.com"
+              sx={{
+                textDecoration: "none",
+                color: colors.white,
+                ":hover": { color: colors.primaryLight },
+              }}
+            >
               <span>
-                <GoLocation size={28} sx={{ color: colors.white }} />
+                <AiOutlineLogin size={18} />
                 <p sx={{ margin: "5px", fontSize: 14, color: colors.white }}>
                   SPBU THR
                 </p>
@@ -128,13 +176,22 @@ function MenuHome() {
           margin: 0,
           padding: 0,
           marginTop: "10px",
+          [phone]: {
+            display: `${isMenuOpen ? "block" : "none"}`,
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            background: colors.dark,
+            width: "calc(100vw - 40px)",
+            paddingBottom: "60px",
+            paddingTop: "20px",
+          },
         }}
       >
         <Navigation
           label="HOME"
           to={"/"}
           subtitle={"Website Kami"}
-          active={true}
+          active={!uri ? true : false}
         />
         <Navigation
           label="CORPORATE"
@@ -162,9 +219,9 @@ function MenuHome() {
         />
         <Navigation
           label="CONTACT US"
-          to={"/"}
+          to={"/contactus"}
           subtitle={"Hubungi Kami"}
-          active={false}
+          active={uri === "/contactus" ? true : false}
         />
       </ul>
     </div>

@@ -2,5 +2,10 @@
   "env": {
     "MY_GOOGLE_MAP_API_KEY": "@googlemapapikey",
     "GATSBY_MY_GOOGLE_MAP_API_KEY": "@googlemapapikey"
+  },
+  "build": {
+    "env": {
+      "GATSBY_MY_GOOGLE_MAP_API_KEY": "@googlemapapikey"
+    }
   }
 }

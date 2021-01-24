@@ -5,7 +5,6 @@ import colors from "../theme/colors"
 import MenuHome from "./landing/MenuHome"
 
 const Header = ({ siteTitle, uri }) => {
-  console.log("props header", { siteTitle, uri })
   return (
     <header sx={{ background: colors.dark, width: "100%", height: "auto" }}>
       <MenuHome uri={uri} />

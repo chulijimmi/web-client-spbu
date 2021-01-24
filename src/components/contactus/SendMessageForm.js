@@ -14,7 +14,7 @@ function SendMessageForm() {
   const [phoneNumber, setPhoneNumber] = React.useState("")
   const [message, setMessage] = React.useState("")
   const handleSendMessage = React.useCallback(() => {
-    console.log("Kirim")
+    // console.log("Kirim")
   }, [])
 
   return (

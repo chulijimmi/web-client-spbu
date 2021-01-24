@@ -41,9 +41,6 @@ export class MapContainer extends Component {
         style={mapStyles}
         initialCenter={{ lat: -7.269015, lng: 112.740217 }}
       >
-        {console.log("env vercel", {
-          prefix: process.env.GATSBY_MY_GOOGLE_MAP_API_KEY,
-        })}
         <Marker onClick={this.onMarkerClick} name={"Belly Law Firm"} />
         <InfoWindow
           marker={this.state.activeMarker}

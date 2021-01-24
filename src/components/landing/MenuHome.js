@@ -66,7 +66,6 @@ function Navigation({ label, to, subtitle, active }) {
   )
 }
 function MenuHome(props) {
-  console.log("props MenuHome", props)
   const { uri } = props
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const handlePressMenu = React.useCallback(() => {

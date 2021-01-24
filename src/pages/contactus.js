@@ -11,7 +11,6 @@ import colors from "../theme/colors"
 import { phone } from "../theme/media-query"
 
 const ContactUs = props => {
-  console.log("props contactus", props)
   return (
     <Layout uri={props.uri}>
       <SEO title="Page two" />

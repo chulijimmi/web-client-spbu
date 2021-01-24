@@ -1,3 +1,9 @@
+// Gatsby config env to access
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+// Gatsby Config Plugins
 module.exports = {
   siteMetadata: {
     title: `PT. YOUR COMPANY SPBU SIAP MELAYANI ANDA`,

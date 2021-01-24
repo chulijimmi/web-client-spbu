@@ -42,9 +42,7 @@ export class MapContainer extends Component {
         initialCenter={{ lat: -7.269015, lng: 112.740217 }}
       >
         {console.log("env vercel", {
-          test: proocess.env.TEST_API_KEY,
-          dev: process.env.GATSBY_MY_GOOGLE_MAP_API_KEY,
-          prod: process.env.MY_GOOGLE_MAP_API_KEY,
+          prefix: process.env.GATSBY_MY_GOOGLE_MAP_API_KEY,
         })}
         <Marker onClick={this.onMarkerClick} name={"Belly Law Firm"} />
         <InfoWindow
@@ -65,5 +63,5 @@ export class MapContainer extends Component {
 
 // Api Key Google Maps
 export default GoogleApiWrapper({
-  apiKey: process.env.MY_GOOGLE_MAP_API_KEY,
+  apiKey: process.env.GATSBY_MY_GOOGLE_MAP_API_KEY,
 })(MapContainer)
